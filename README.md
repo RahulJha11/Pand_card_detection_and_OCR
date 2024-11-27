@@ -1,7 +1,7 @@
 
-# Invoice Processing System using FastAPI and Streamlit
+# Pan Card Processing System using FastAPI and Streamlit
 
-This repository implements an end-to-end solution for processing invoice images. The system detects key fields on invoices using a YOLO model, extracts text using OCR, and visualizes the results in a Streamlit app. 
+This repository implements an end-to-end solution for processing Pan Card images. The system detects key fields on Pan Card using a coustom YOLOv10 model, extracts text using OCR, and visualizes the results in a Streamlit app. 
 
 ### Table of Contents
 - [Overview](#overview)
@@ -21,7 +21,7 @@ This repository implements an end-to-end solution for processing invoice images.
 
 ## Overview
 
-This project allows users to upload invoice images, detect fields such as invoice numbers, dates, and amounts using a YOLO model, and extract the detected text using OCR. It provides:
+This project allows users to upload Pan Card images, detect fields such as Pandcard numbers, date of Birth, Name and Father Name using a YOLO model, and extract the detected text using OCR. It provides:
 1. A **FastAPI backend** for YOLO inference and OCR processing.
 2. A **Streamlit frontend** for uploading images and visualizing the results.
 
@@ -93,8 +93,8 @@ The frontend UI will be available at `http://localhost:8501`.
 
 ## Usage
 
-1. **Upload Invoice Image**:
-   - Use the Streamlit app to upload an invoice image (`jpg`, `jpeg`, or `png`).
+1. **Upload Pand Card Image**:
+   - Use the Streamlit app to upload an PanCard image (`jpg`, `jpeg`, or `png`).
    
 2. **Process Image**:
    - Click the **Process Image** button to send the image to the FastAPI backend.
