@@ -57,7 +57,7 @@ Ensure you have the following installed:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/invoice-processing.git
+   git clone https://github.com/RahulJha11/Pand_card_detection_and_OCR.git
    cd Pand_card_detection_and_OCR
    ```
 
