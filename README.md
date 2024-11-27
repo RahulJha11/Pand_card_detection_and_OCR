@@ -173,8 +173,7 @@ The frontend UI will be available at `http://localhost:8501`.
     ]
   }
 ]
-
-  ```
+```
 
 #### Visualized Image
   The bounding boxes and extracted text will be displayed on the image using Streamlit.
