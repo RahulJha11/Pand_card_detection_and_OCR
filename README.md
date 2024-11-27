@@ -14,7 +14,6 @@ This repository implements an end-to-end solution for processing invoice images.
 - [Project Structure](#project-structure)
 - [Usage](#usage)
 - [Example Output](#example-output)
-- [Future Enhancements](#future-enhancements)
 - [Contributing](#contributing)
 - [License](#license)
 
