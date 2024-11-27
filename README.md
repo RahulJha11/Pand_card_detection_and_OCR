@@ -30,20 +30,19 @@ This project allows users to upload invoice images, detect fields such as invoic
 
 ## Features
 
-- Detects key invoice fields using a pre-trained YOLO model.
-- Extracts text from detected bounding boxes using Tesseract or EasyOCR.
-- Displays both the uploaded image and processed JSON response side by side in the Streamlit UI.
-- Supports dynamic switching between Tesseract and EasyOCR for OCR tasks.
+* Detects key Pancard fields using a coustom-trained YOLOv10 model.
+* Extracts text from detected bounding boxes using DocTr.
+* Displays both the uploaded image and processed JSON response side by side in the Streamlit UI.
 
 ---
 
 ## Technologies Used
 
-- **YOLOv8** for object detection.
-- **Tesseract OCR** and **EasyOCR** for text extraction.
+- **YOLOv10** for object detection.
+- **DocTr OCR** for text extraction.
 - **FastAPI** for the backend API.
 - **Streamlit** for the frontend interface.
-- **Python** (with libraries such as `httpx`, `opencv-python`, and `matplotlib`).
+- **Python**.
 
 ---
 
@@ -51,16 +50,16 @@ This project allows users to upload invoice images, detect fields such as invoic
 
 ### Prerequisites
 Ensure you have the following installed:
-- Python 3.8 or higher
+- Python 3.10 or higher
 - pip (Python package manager)
-- Tesseract (for OCR; install [here](https://github.com/tesseract-ocr/tesseract))
-- A YOLO model trained on invoice fields (e.g., `best.pt`).
+- DocTr (for OCR;)
+- A YOLO model trained on Pancard fields (e.g., `best.pt`).
 
 ### Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/invoice-processing.git
-   cd invoice-processing
+   cd Pand_card_detection_and_OCR
    ```
 
 2. Install Python dependencies:
@@ -68,7 +67,7 @@ Ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
-3. Ensure you have a YOLO model (`best.pt`) ready and place it in the root directory.
+3. Ensure you have a YOLO model inside backend/model folder (`best.pt`) ready and place it in the root directory.
 
 ---
 
@@ -77,32 +76,21 @@ Ensure you have the following installed:
 #### Step 1: Start the FastAPI Backend
 Run the FastAPI server for YOLO inference and OCR processing:
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+python backend/app.py
 ```
-The backend API will be accessible at `http://127.0.0.1:8000`.
+
+
+The backend API will be accessible at `http://localhost:5000/api/yolo/uploadpancard`.
 
 #### Step 2: Start the Streamlit Frontend
 Run the Streamlit app to upload images and view results:
 ```bash
-streamlit run streamlit_app.py
+streamlit run frontend/streamlit_app.py
 ```
 The frontend UI will be available at `http://localhost:8501`.
 
 ---
 
-## Project Structure
-
-```plaintext
-.
-├── main.py                  # FastAPI backend
-├── streamlit_app.py         # Streamlit frontend
-├── requirements.txt         # Python dependencies
-├── best.pt                  # YOLO model weights (add this yourself)
-├── temp_uploads/            # Temporary directory for uploaded images
-└── README.md                # Project documentation
-```
-
----
 
 ## Usage
 
@@ -116,8 +104,8 @@ The frontend UI will be available at `http://localhost:8501`.
      - Performs OCR on the detected regions to extract text.
 
 3. **View Results**:
-   - The **uploaded image** will appear on the left side.
-   - The **JSON response** (containing detected bounding boxes and text) will appear on the right side.
+   - The **uploaded processed image** will appear on the left side with bonding box.
+   - The **JSON response** (containing detected bounding boxes and oCR text) will appear on the right side.
 
 ---
 
@@ -131,48 +119,66 @@ The frontend UI will be available at `http://localhost:8501`.
 - **JSON Response**:
   ```json
   [
-      {
-          "image": "invoice1.jpg",
-          "detections": [
-              {
-                  "class_id": 0,
-                  "confidence": 0.95,
-                  "bounding_box": {
-                      "x_min": 100,
-                      "y_min": 50,
-                      "x_max": 200,
-                      "y_max": 80
-                  },
-                  "text": "INV12345"
-              },
-              {
-                  "class_id": 1,
-                  "confidence": 0.92,
-                  "bounding_box": {
-                      "x_min": 150,
-                      "y_min": 100,
-                      "x_max": 250,
-                      "y_max": 130
-                  },
-                  "text": "2024-11-23"
-              }
-          ]
-      }
-  ]
+0:{
+"image_path":"D:\AImonk_assig\app\backend\save_result\download.jpg"
+"detection":[
+0:{
+"name":"father"
+"class":1
+"confidence":0.90266
+"box":{
+"x1":14.03593
+"y1":72.26413
+"x2":138.75572
+"y2":95.40302
+}
+"ocr_text":"RAJENDRA PRATAP SINGH"
+}
+1:{
+"name":"name"
+"class":2
+"confidence":0.87311
+"box":{
+"x1":13.10176
+"y1":49.30516
+"x2":134.70937
+"y2":68.73293
+}
+"ocr_text":"MAHESH PRATAP -
+SINGH"
+}
+2:{
+"name":"dob"
+"class":0
+"confidence":0.73876
+"box":{
+"x1":11.69924
+"y1":98.85611
+"x2":66.73045
+"y2":113.40095
+}
+"ocr_text":"06/19 97 -"
+}
+3:{
+"name":"pan_num"
+"class":3
+"confidence":0.71947
+"box":{
+"x1":9.21024
+"y1":123.03368
+"x2":91.34866
+"y2":141.86511
+}
+"ocr_text":"- S WPS0850Q"
+}
+]
+}
+]
   ```
 
 - **Visualized Image**:
   The bounding boxes and extracted text will be displayed on the image using Streamlit.
 
----
-
-## Future Enhancements
-
-- Add database support to save and retrieve processed results.
-- Enhance YOLO model training for better accuracy.
-- Deploy the system using Docker for scalability.
-- Add multi-language OCR support.
-- Visualize bounding boxes and extracted text directly in the Streamlit app.
 
 ---
 
