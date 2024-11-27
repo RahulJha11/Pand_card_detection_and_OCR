@@ -119,65 +119,65 @@ The frontend UI will be available at `http://localhost:8501`.
 - **JSON Response**:
   ```json
   [
-  {
-    "image_path": "D:\\AImonk_assig\\app\\backend\\save_result\\download.jpg",
-    "detection": [
-      {
-        "name": "father",
-        "class": 1,
-        "confidence": 0.90266,
-        "box": {
-          "x1": 14.03593,
-          "y1": 72.26413,
-          "x2": 138.75572,
-          "y2": 95.40302
+    {
+      "image_path": "D:\\AImonk_assig\\app\\backend\\save_result\\download.jpg",
+      "detection": [
+        {
+          "name": "father",
+          "class": 1,
+          "confidence": 0.90266,
+          "box": {
+            "x1": 14.03593,
+            "y1": 72.26413,
+            "x2": 138.75572,
+            "y2": 95.40302
+          },
+          "ocr_text": "RAJENDRA PRATAP SINGH"
         },
-        "ocr_text": "RAJENDRA PRATAP SINGH"
-      },
-      {
-        "name": "name",
-        "class": 2,
-        "confidence": 0.87311,
-        "box": {
-          "x1": 13.10176,
-          "y1": 49.30516,
-          "x2": 134.70937,
-          "y2": 68.73293
+        {
+          "name": "name",
+          "class": 2,
+          "confidence": 0.87311,
+          "box": {
+            "x1": 13.10176,
+            "y1": 49.30516,
+            "x2": 134.70937,
+            "y2": 68.73293
+          },
+          "ocr_text": "MAHESH PRATAP -SINGH"
         },
-        "ocr_text": "MAHESH PRATAP -SINGH"
-      },
-      {
-        "name": "dob",
-        "class": 0,
-        "confidence": 0.73876,
-        "box": {
-          "x1": 11.69924,
-          "y1": 98.85611,
-          "x2": 66.73045,
-          "y2": 113.40095
+        {
+          "name": "dob",
+          "class": 0,
+          "confidence": 0.73876,
+          "box": {
+            "x1": 11.69924,
+            "y1": 98.85611,
+            "x2": 66.73045,
+            "y2": 113.40095
+          },
+          "ocr_text": "06/19 97 -"
         },
-        "ocr_text": "06/19 97 -"
-      },
-      {
-        "name": "pan_num",
-        "class": 3,
-        "confidence": 0.71947,
-        "box": {
-          "x1": 9.21024,
-          "y1": 123.03368,
-          "x2": 91.34866,
-          "y2": 141.86511
-        },
-        "ocr_text": "- S WPS0850Q"
-      }
-    ]
-  }
- ]
- ```
+        {
+          "name": "pan_num",
+          "class": 3,
+          "confidence": 0.71947,
+          "box": {
+            "x1": 9.21024,
+            "y1": 123.03368,
+            "x2": 91.34866,
+            "y2": 141.86511
+          },
+          "ocr_text": "- S WPS0850Q"
+        }
+      ]
+    }
+  ]
+  ```
 
-#### Visualized Image
-  The bounding boxes and extracted text will be displayed on the image using Streamlit.
-  ![Alt text](download.jpg)
+- **Detected image**:  
+The bounding boxes and extracted text will be displayed on the image using Streamlit.
+![Alt text](download.jpg)
 
 
 ---
