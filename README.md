@@ -113,7 +113,7 @@ The frontend UI will be available at `http://localhost:8501`.
 
 #### Input
 - Uploaded image:  
-![Uploaded Image Example](https://via.placeholder.com/400x200)
+![Alt text](frontend\temp_uploads\download.jpg)
 
 #### Output
 - **JSON Response**:
@@ -178,6 +178,7 @@ The frontend UI will be available at `http://localhost:8501`.
 
 - **Visualized Image**:
   The bounding boxes and extracted text will be displayed on the image using Streamlit.
+  ![Alt text](download.jpg)
 
 
 ---
