@@ -113,7 +113,7 @@ The frontend UI will be available at `http://localhost:8501`.
 
 #### Input
 - Uploaded image:  
-![Alt text](frontend\temp_uploads\download.jpg)
+![Alt text](frontend/temp_uploads/DMVCB8512D.jpg)
 
 #### Output
 - **JSON Response**:
